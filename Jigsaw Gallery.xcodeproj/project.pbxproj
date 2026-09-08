@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07B2F654FBD114DE9F0FF08A /* JGRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B897E8829C79F8DE243D45F /* JGRootView.swift */; };
+		093587B6F3B68A550FE04E0A /* MosaicWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB53F12AED5C03BF4E0CF96 /* MosaicWebPanel.swift */; };
+		15A00C600A6A7FAB555AB7AA /* JGShelfTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B13E26ACC55B700BAB5A015 /* JGShelfTab.swift */; };
+		36F047899123D3DA7BEF2FE7 /* JGPieceGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DD55918A52A8BF1F54BF6 /* JGPieceGeometry.swift */; };
+		43F6119D389C71D4415B5071 /* MosaicLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14E2BB448DFAAFA8301D34 /* MosaicLoadingScreen.swift */; };
+		54A96CBB6A1D7FECC9D129F0 /* JGStatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87748B65E8721D82DA0B05 /* JGStatsTab.swift */; };
+		5E945A8AFA583475EC4D7D3F /* JGModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B668E971AAAC90A841415 /* JGModels.swift */; };
+		63A9AF6B1C5ABB68E771324C /* JGStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2240CC06A52FE531969983 /* JGStore.swift */; };
+		6CEA398561F3F50DAD994226 /* JGTrayStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB19206FA5202C27E6A32F /* JGTrayStrip.swift */; };
+		78E50842F8BE04A62842A70D /* JGCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6762AD87B96640B4281675C9 /* JGCatalog.swift */; };
+		9254386B5288112BF800748C /* JGPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CCF712DE2C7656D4C3CD6 /* JGPuzzleView.swift */; };
+		9E8937367D23E281C64D8A99 /* JGGalleryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0594BEF241D294CB19C580A /* JGGalleryTab.swift */; };
+		A1DCB77DC4ED1991CEBD59A1 /* JGBoardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1325D333FBEE95DF8FD8F1F /* JGBoardLayer.swift */; };
+		AB6730B40432570378021837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6864020EB9343F71366A9AA3 /* Assets.xcassets */; };
+		AC68526585C7A823547D91A4 /* JigsawGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138BD6A2ABAB4B951AF3B23B /* JigsawGalleryApp.swift */; };
+		AC7520EC588DBE30D9B50866 /* JGSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBEA079184EFCDBD857674B /* JGSession.swift */; };
+		B219041D0714E6E8E7EB04B5 /* JGTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33811E53FA10C89C5E6182 /* JGTheme.swift */; };
+		B3DAE9F122C12D787DF61CD2 /* JGGlyphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A1A751157312C7B5E6F91 /* JGGlyphs.swift */; };
+		E68D992B57A0AFC57A994CBA /* JGSettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E06278C594DDBD55E2F50 /* JGSettingsTab.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		138BD6A2ABAB4B951AF3B23B /* JigsawGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JigsawGalleryApp.swift; sourceTree = "<group>"; };
+		411D386E7078BD8951FD7218 /* Jigsaw Gallery.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Jigsaw Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A87748B65E8721D82DA0B05 /* JGStatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGStatsTab.swift; sourceTree = "<group>"; };
+		5F7CCF712DE2C7656D4C3CD6 /* JGPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGPuzzleView.swift; sourceTree = "<group>"; };
+		6762AD87B96640B4281675C9 /* JGCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGCatalog.swift; sourceTree = "<group>"; };
+		6864020EB9343F71366A9AA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A8B668E971AAAC90A841415 /* JGModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGModels.swift; sourceTree = "<group>"; };
+		6FBEA079184EFCDBD857674B /* JGSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGSession.swift; sourceTree = "<group>"; };
+		7B897E8829C79F8DE243D45F /* JGRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGRootView.swift; sourceTree = "<group>"; };
+		945A1A751157312C7B5E6F91 /* JGGlyphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGlyphs.swift; sourceTree = "<group>"; };
+		9B13E26ACC55B700BAB5A015 /* JGShelfTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGShelfTab.swift; sourceTree = "<group>"; };
+		9B33811E53FA10C89C5E6182 /* JGTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGTheme.swift; sourceTree = "<group>"; };
+		A1325D333FBEE95DF8FD8F1F /* JGBoardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGBoardLayer.swift; sourceTree = "<group>"; };
+		CFB53F12AED5C03BF4E0CF96 /* MosaicWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicWebPanel.swift; sourceTree = "<group>"; };
+		E0594BEF241D294CB19C580A /* JGGalleryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGalleryTab.swift; sourceTree = "<group>"; };
+		EB5E06278C594DDBD55E2F50 /* JGSettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGSettingsTab.swift; sourceTree = "<group>"; };
+		ED14E2BB448DFAAFA8301D34 /* MosaicLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLoadingScreen.swift; sourceTree = "<group>"; };
+		F3BB19206FA5202C27E6A32F /* JGTrayStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGTrayStrip.swift; sourceTree = "<group>"; };
+		F62DD55918A52A8BF1F54BF6 /* JGPieceGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGPieceGeometry.swift; sourceTree = "<group>"; };
+		FD2240CC06A52FE531969983 /* JGStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1695A9F9F21E8457A7F4AD11 /* JigsawGallery */ = {
+			isa = PBXGroup;
+			children = (
+				6864020EB9343F71366A9AA3 /* Assets.xcassets */,
+				708F694AFF125DEB984993D3 /* Sources */,
+			);
+			path = JigsawGallery;
+			sourceTree = "<group>";
+		};
+		2C9A2D65B20BF96CE0678D16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				411D386E7078BD8951FD7218 /* Jigsaw Gallery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		708F694AFF125DEB984993D3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A1325D333FBEE95DF8FD8F1F /* JGBoardLayer.swift */,
+				6762AD87B96640B4281675C9 /* JGCatalog.swift */,
+				E0594BEF241D294CB19C580A /* JGGalleryTab.swift */,
+				945A1A751157312C7B5E6F91 /* JGGlyphs.swift */,
+				6A8B668E971AAAC90A841415 /* JGModels.swift */,
+				F62DD55918A52A8BF1F54BF6 /* JGPieceGeometry.swift */,
+				5F7CCF712DE2C7656D4C3CD6 /* JGPuzzleView.swift */,
+				7B897E8829C79F8DE243D45F /* JGRootView.swift */,
+				6FBEA079184EFCDBD857674B /* JGSession.swift */,
+				EB5E06278C594DDBD55E2F50 /* JGSettingsTab.swift */,
+				9B13E26ACC55B700BAB5A015 /* JGShelfTab.swift */,
+				5A87748B65E8721D82DA0B05 /* JGStatsTab.swift */,
+				FD2240CC06A52FE531969983 /* JGStore.swift */,
+				9B33811E53FA10C89C5E6182 /* JGTheme.swift */,
+				F3BB19206FA5202C27E6A32F /* JGTrayStrip.swift */,
+				138BD6A2ABAB4B951AF3B23B /* JigsawGalleryApp.swift */,
+				ED14E2BB448DFAAFA8301D34 /* MosaicLoadingScreen.swift */,
+				CFB53F12AED5C03BF4E0CF96 /* MosaicWebPanel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A940272DC59E5C5855BE5959 = {
+			isa = PBXGroup;
+			children = (
+				1695A9F9F21E8457A7F4AD11 /* JigsawGallery */,
+				2C9A2D65B20BF96CE0678D16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BB173169F44B24064894B54 /* Jigsaw Gallery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 475081C832BED0D52DFE24DE /* Build configuration list for PBXNativeTarget "Jigsaw Gallery" */;
+			buildPhases = (
+				8E2868E8DA02E7B293044EC5 /* Sources */,
+				F04E0551FC12E3A863DF9A04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jigsaw Gallery";
+			packageProductDependencies = (
+			);
+			productName = "Jigsaw Gallery";
+			productReference = 411D386E7078BD8951FD7218 /* Jigsaw Gallery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97A89A954F567389B013DF10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5BB173169F44B24064894B54 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 9D665EFAB7370E3B52EA06A1 /* Build configuration list for PBXProject "Jigsaw Gallery" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A940272DC59E5C5855BE5959;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2C9A2D65B20BF96CE0678D16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BB173169F44B24064894B54 /* Jigsaw Gallery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F04E0551FC12E3A863DF9A04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6730B40432570378021837 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E2868E8DA02E7B293044EC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1DCB77DC4ED1991CEBD59A1 /* JGBoardLayer.swift in Sources */,
+				78E50842F8BE04A62842A70D /* JGCatalog.swift in Sources */,
+				9E8937367D23E281C64D8A99 /* JGGalleryTab.swift in Sources */,
+				B3DAE9F122C12D787DF61CD2 /* JGGlyphs.swift in Sources */,
+				5E945A8AFA583475EC4D7D3F /* JGModels.swift in Sources */,
+				36F047899123D3DA7BEF2FE7 /* JGPieceGeometry.swift in Sources */,
+				9254386B5288112BF800748C /* JGPuzzleView.swift in Sources */,
+				07B2F654FBD114DE9F0FF08A /* JGRootView.swift in Sources */,
+				AC7520EC588DBE30D9B50866 /* JGSession.swift in Sources */,
+				E68D992B57A0AFC57A994CBA /* JGSettingsTab.swift in Sources */,
+				15A00C600A6A7FAB555AB7AA /* JGShelfTab.swift in Sources */,
+				54A96CBB6A1D7FECC9D129F0 /* JGStatsTab.swift in Sources */,
+				63A9AF6B1C5ABB68E771324C /* JGStore.swift in Sources */,
+				B219041D0714E6E8E7EB04B5 /* JGTheme.swift in Sources */,
+				6CEA398561F3F50DAD994226 /* JGTrayStrip.swift in Sources */,
+				AC68526585C7A823547D91A4 /* JigsawGalleryApp.swift in Sources */,
+				43F6119D389C71D4415B5071 /* MosaicLoadingScreen.swift in Sources */,
+				093587B6F3B68A550FE04E0A /* MosaicWebPanel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3D5DA6894F6FBE38DE9512D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JigsawGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jigsawgallery.app;
+				PRODUCT_NAME = "Jigsaw Gallery";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4555FE4AD84C8A4766228BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4D9FA17CC0B3C43258D0E044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JigsawGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jigsawgallery.app;
+				PRODUCT_NAME = "Jigsaw Gallery";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		941FC5E5D2E770BE39D36417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		475081C832BED0D52DFE24DE /* Build configuration list for PBXNativeTarget "Jigsaw Gallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D5DA6894F6FBE38DE9512D4 /* Debug */,
+				4D9FA17CC0B3C43258D0E044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D665EFAB7370E3B52EA06A1 /* Build configuration list for PBXProject "Jigsaw Gallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941FC5E5D2E770BE39D36417 /* Debug */,
+				4555FE4AD84C8A4766228BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97A89A954F567389B013DF10 /* Project object */;
+}
