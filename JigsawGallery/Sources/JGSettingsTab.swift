@@ -239,7 +239,7 @@ struct JGPrivacySheet: View {
             .background(JGPalette.card)
             .overlay(Rectangle().fill(JGPalette.cardEdge).frame(height: 1), alignment: .bottom)
 
-            MosaicWebPanel(address: "https://example.com")
+            MosaicWebPanel(address: "https://crazytimeline.org")
                 .edgesIgnoringSafeArea(.bottom)
         }
     }

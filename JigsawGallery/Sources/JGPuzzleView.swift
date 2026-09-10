@@ -8,7 +8,18 @@ enum JGSpace {
 /// finger position taken anywhere on screen can be turned into a board position.
 struct JGBoardFrameKey: PreferenceKey {
     static var defaultValue: CGRect = .zero
-    static func reduce(value: inout CGRect, nextValue: () -> CGRect) { value = nextValue() }
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+        // Exactly ONE view sets this key: the probe behind the board viewport. Every
+        // other subtree on this screen contributes the default `.zero`, and a plain
+        // `value = nextValue()` lets whichever of them is reduced LAST win — the tray
+        // sits after the board in both the portrait VStack and the landscape HStack, and
+        // the carried piece and the sheets sit after both. The frame then stayed `.zero`,
+        // which made `dropCarried` return before `tryPlace` and drew the carried piece at
+        // tray size: pieces could be lifted but never put down.
+        let next = nextValue()
+        guard next != .zero else { return }
+        value = next
+    }
 }
 
 /// The playing screen: board above, tray below in portrait and alongside in landscape.

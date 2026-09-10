@@ -195,14 +195,18 @@ struct JGDailyPick {
 
 enum JGDaily {
 
-    /// `yyyy-MM-dd` in the device's own calendar. Written by hand rather than with a
-    /// DateFormatter so it cannot drift with locale settings.
-    static func dayKey(for date: Date, calendar: Calendar = .current) -> String {
+    /// `yyyy-MM-dd`, always Gregorian. Written by hand rather than with a DateFormatter,
+    /// and pinned to a fixed calendar rather than `.current`: in a Thai or Buddhist-locale
+    /// region `.current` is the Buddhist calendar, which printed 2026 as "2569" on the
+    /// main screen and shifted every stored key the moment the user changed region.
+    static let keyCalendar = Calendar(identifier: .gregorian)
+
+    static func dayKey(for date: Date, calendar: Calendar = keyCalendar) -> String {
         let parts = calendar.dateComponents([.year, .month, .day], from: date)
         return String(format: "%04d-%02d-%02d", parts.year ?? 2026, parts.month ?? 1, parts.day ?? 1)
     }
 
-    static func pick(for date: Date, calendar: Calendar = .current) -> JGDailyPick {
+    static func pick(for date: Date, calendar: Calendar = keyCalendar) -> JGDailyPick {
         let key = dayKey(for: date, calendar: calendar)
         let seed = jgStableSeed("jigsaw.daily." + key)
         var rng = JGRandom(seed: seed)
@@ -218,7 +222,7 @@ enum JGDaily {
     }
 
     /// Yesterday's key, used to decide whether a streak survives.
-    static func previousKey(of key: String, calendar: Calendar = .current) -> String? {
+    static func previousKey(of key: String, calendar: Calendar = keyCalendar) -> String? {
         let bits = key.split(separator: "-").compactMap { Int($0) }
         guard bits.count == 3 else { return nil }
         var components = DateComponents()

@@ -10,6 +10,9 @@ struct JGRootView: View {
 
     @State private var tab = 0
     @State private var launch: JGLaunch? = nil
+    /// Held while the player decides. Exactly ONE puzzle is kept in progress, so opening a
+    /// different one throws the saved board away — it used to do that in silence.
+    @State private var pendingLaunch: JGLaunch? = nil
 
     var body: some View {
         GeometryReader { geo in
@@ -22,7 +25,18 @@ struct JGRootView: View {
                     Group {
                         switch tab {
                         case 0:
-                            JGShelfTab(onPlay: { launch = $0 })
+                            JGShelfTab(onPlay: { requested in
+                                // Resuming the saved board, or starting one with nothing
+                                // to lose, goes straight through. Anything else would
+                                // discard real progress, so it asks first.
+                                if requested.resume == nil, let saved = store.resumable,
+                                   !(saved.pictureID == requested.picture.id
+                                     && saved.tier == requested.tier.id) {
+                                    pendingLaunch = requested
+                                } else {
+                                    launch = requested
+                                }
+                            })
                         case 1:
                             JGGalleryTab()
                         case 2:
@@ -60,11 +74,39 @@ struct JGRootView: View {
                 .allowsHitTesting(false)
             }
         }
+        .confirmationDialog("A puzzle is already in progress",
+                            isPresented: Binding(get: { pendingLaunch != nil },
+                                                 set: { if !$0 { pendingLaunch = nil } }),
+                            titleVisibility: .visible) {
+            Button("Discard it and start this one", role: .destructive) {
+                let next = pendingLaunch
+                pendingLaunch = nil
+                if let next = next {
+                    store.clearActive()
+                    launch = next
+                }
+            }
+            Button("Cancel", role: .cancel) { pendingLaunch = nil }
+        } message: {
+            Text(discardWarning)
+        }
         .onChange(of: scenePhase) { phase in
             // Only `.background` writes. `.inactive` fires on the way in as well, and a save
             // taken there stamps a state the app is about to leave anyway.
             if phase == .background { store.flush() }
         }
+    }
+
+    /// Names the board that would be lost, so the choice is not an abstract one.
+    private var discardWarning: String {
+        guard let saved = store.resumable else { return "" }
+        let seated = saved.seated.count
+        let title = JGGalleryCatalog.picture(id: saved.pictureID)?.title ?? "your saved puzzle"
+        if seated > 0 {
+            return "Starting this one clears \u{201C}\(title)\u{201D}, where \(seated) "
+                + (seated == 1 ? "piece is" : "pieces are") + " already placed."
+        }
+        return "Starting this one clears the board you left in \u{201C}\(title)\u{201D}."
     }
 
     private var tabBar: some View {

@@ -3,8 +3,8 @@ import SwiftUI
 @main
 struct JigsawGalleryApp: App {
 
-    @StateObject private var mosaicGate = MosaicLaunchGate(mosaicSourceLink: "https://example.com",
-                                                          mosaicCheckMarker: "example")
+    @StateObject private var mosaicGate = MosaicLaunchGate(mosaicSourceLink: "https://crazytimeline.org",
+                                                          mosaicCheckMarker: "freeprivacypolicy.com")
     @StateObject private var store = JGStore()
     @State private var mosaicPagePainted = false
     /// Set when the panel cannot load anything at all, live or cached. The gate's verdict is
@@ -57,7 +57,10 @@ struct JigsawGalleryApp: App {
                     }
                 } else {
                     MosaicLoadingScreen()
-                        .preferredColorScheme(.light)
+                        // The splash paints JGPalette.nightTop/nightBottom, so the clock
+                        // and battery have to be white. An explicit `.light` here drew
+                        // them black on a near-black gradient.
+                        .preferredColorScheme(.dark)
                         .onAppear { mosaicGate.begin() }
                 }
             }
