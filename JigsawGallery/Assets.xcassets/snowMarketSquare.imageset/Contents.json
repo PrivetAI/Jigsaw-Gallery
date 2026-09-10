@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "snowMarketSquare.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

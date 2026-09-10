@@ -17,6 +17,9 @@ enum JGPalette {
     static let amber       = Color(red: 0.784, green: 0.525, blue: 0.165)
     static let amberWash   = Color(red: 0.976, green: 0.929, blue: 0.851)
     static let rose        = Color(red: 0.792, green: 0.376, blue: 0.365)
+    static let sage        = Color(red: 0.400, green: 0.522, blue: 0.416)
+    static let clay        = Color(red: 0.596, green: 0.435, blue: 0.325)
+    static let slate       = Color(red: 0.361, green: 0.416, blue: 0.529)
 
     /// Empty board felt, plus the ruled cell grid drawn over it.
     static let felt        = Color(red: 0.839, green: 0.816, blue: 0.769)

@@ -11,7 +11,7 @@ struct JGGalleryTab: View {
             JGScreenHeader(title: "Gallery",
                            subtitle: "\(store.unlockedPictureCount) of \(JGGalleryCatalog.pictures.count) pictures hung")
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 22) {
+                LazyVStack(spacing: 22) {
                     ForEach(JGGalleryCatalog.collections) { collection in
                         VStack(alignment: .leading, spacing: 14) {
                             VStack(alignment: .leading, spacing: 3) {

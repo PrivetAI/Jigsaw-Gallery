@@ -160,7 +160,7 @@ final class JGStore: ObservableObject {
         return (found.0, found.1)
     }
 
-    /// How many of a collection's 20 configurations are finished.
+    /// How many of a collection's configurations — its pictures times the five cuts — are done.
     func collectionProgress(_ collection: JGCollection) -> (done: Int, total: Int) {
         var done = 0
         for picture in collection.pictures {

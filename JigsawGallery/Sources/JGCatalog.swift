@@ -42,6 +42,21 @@ enum JGTiers {
     }
 }
 
+/// Spells a small number out in words, so the prose in Settings can quote the catalog's
+/// own counts without anyone having to retype "twelve" the next time a picture is added.
+/// Pinned to en_US because the app ships in English only; the digits are the fallback.
+func jgSpelledNumber(_ value: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .spellOut
+    formatter.locale = Locale(identifier: "en_US")
+    return formatter.string(from: NSNumber(value: value)) ?? "\(value)"
+}
+
+func jgSpelledNumberCapitalised(_ value: Int) -> String {
+    let word = jgSpelledNumber(value)
+    return word.prefix(1).uppercased() + word.dropFirst()
+}
+
 /// A picture in the gallery. `asset` is the image set name in the catalog.
 struct JGPicture: Identifiable {
     let id: String
@@ -64,7 +79,7 @@ enum JGGalleryCatalog {
         JGCollection(
             id: "coast",
             name: "Quiet Coast",
-            blurb: "Four working shorelines, painted on days when nothing much was happening.",
+            blurb: "Six working shorelines, painted on days when nothing much was happening.",
             pictures: [
                 JGPicture(
                     id: "coast.lowtide",
@@ -93,13 +108,27 @@ enum JGGalleryCatalog {
                     title: "The Boat Yard",
                     collection: "Quiet Coast",
                     caption: "A yard where nothing is thrown away in case it comes in useful, and it always does. Hulls wait upside down for their turn, timber is stacked by length rather than by grade, and the shed wall carries thirty years of floats hung up on nails. Everything here has been repaired at least once."
+                ),
+                JGPicture(
+                    id: "coast.pier",
+                    asset: "coastPierLamps",
+                    title: "The Long Pier",
+                    collection: "Quiet Coast",
+                    caption: "Built for the boats and used by everybody else. The lamps come on before they are needed, the boards give under you in the same three places every time, and the pots stacked along the rail belong to whoever put them there. Once the sun is properly down the gulls have the whole thing to themselves."
+                ),
+                JGPicture(
+                    id: "coast.marsh",
+                    asset: "coastSaltMarsh",
+                    title: "The Salt Marsh",
+                    collection: "Quiet Coast",
+                    caption: "Neither land nor water, and it changes its mind twice a day. The creeks fill from the bottom up so quickly that a channel you stepped over in the morning wants a boat by lunchtime. Sea lavender holds the banks together, the birds work the mud for whatever the tide left behind, and the staithe is the only straight line in it."
                 )
             ]
         ),
         JGCollection(
             id: "wood",
             name: "Woodland Hours",
-            blurb: "Four pieces of forest, each painted at the height of its own season.",
+            blurb: "Six pieces of forest, each painted at the height of its own season.",
             pictures: [
                 JGPicture(
                     id: "wood.leaffall",
@@ -128,13 +157,27 @@ enum JGGalleryCatalog {
                     title: "The Hollow Oak",
                     collection: "Woodland Hours",
                     caption: "Hollow for a century and in no hurry about it, this oak is now more a building than a tree. Squirrels use the ivy as a staircase, an owl has the upper room, and bracket fungus steps out of the trunk in shelves wide enough to sit on. The acorns still come down every autumn, by the thousand."
+                ),
+                JGPicture(
+                    id: "wood.bluebells",
+                    asset: "woodBluebells",
+                    title: "Bluebell Morning",
+                    collection: "Woodland Hours",
+                    caption: "The whole show lasts about three weeks and is finished before the beech leaves are properly out, which is the arrangement the bluebells have made. They come up through last year's litter in numbers that make no sense, hold the colour for a fortnight, then go back underground for eleven months. On a still morning you smell them before you see them."
+                ),
+                JGPicture(
+                    id: "wood.summer",
+                    asset: "woodSummerCanopy",
+                    title: "Full Summer",
+                    collection: "Woodland Hours",
+                    caption: "By July the canopy has closed and the wood keeps its own weather underneath: cooler, greener and about two stops darker than the field outside. Foxgloves take the gaps where a tree came down and brambles take everything else. The light arrives in coins that move all afternoon and never quite land on the path."
                 )
             ]
         ),
         JGCollection(
             id: "city",
             name: "City at Dusk",
-            blurb: "Four city scenes caught in the half hour when the lamps beat the daylight.",
+            blurb: "Six city scenes caught in the half hour when the lamps beat the daylight.",
             pictures: [
                 JGPicture(
                     id: "city.rooftops",
@@ -162,7 +205,168 @@ enum JGGalleryCatalog {
                     asset: "cityRiverBridge",
                     title: "The Iron Bridge",
                     collection: "City at Dusk",
-                    caption: "The ironwork was made ornamental because that is simply how bridges were made then, and a century later nobody would dare simplify it. Barges tie up along the quay below, the steps down are worn into a curve, and the whole thing arrives twice — once in the air and once in the water. Dusk is when the two versions match."
+                    caption: "The ironwork was made ornamental because that is simply how bridges were made then, and a century later nobody would dare simplify it. Barges tie up along the quay below, the steps down are worn into a curve, and the whole thing arrives twice, once in the air and once in the water. Dusk is when the two versions match."
+                ),
+                JGPicture(
+                    id: "city.canal",
+                    asset: "cityCanalHouses",
+                    title: "The Canal Houses",
+                    collection: "City at Dusk",
+                    caption: "Built narrow because the frontage was taxed, and tall because the family had to go somewhere. The gables lean out over the water so furniture can be swung up past a staircase that was never going to take it. At dusk the row appears twice, and the version in the water is the tidier of the two."
+                ),
+                JGPicture(
+                    id: "city.parkgate",
+                    asset: "cityParkGate",
+                    title: "The Park Gate",
+                    collection: "City at Dusk",
+                    caption: "The gate is shut at dusk and the lamps inside stay lit for another hour, which appears to be nobody's decision in particular. Rain earlier has put a shine on the path and stuck the leaves down flat, so the light runs all the way to the fountain in two long smears. The benches are wet and will stay wet until Thursday."
+                )
+            ]
+        ),
+        JGCollection(
+            id: "peak",
+            name: "High and Quiet",
+            blurb: "Six days above the last wall, where the weather turns up before you hear it.",
+            pictures: [
+                JGPicture(
+                    id: "peak.tarn",
+                    asset: "peakColdTarn",
+                    title: "The Cold Tarn",
+                    collection: "High and Quiet",
+                    caption: "Held in a hollow the ice left behind, fed by not much and drained by less. The far end is deep enough to stay the same temperature all year, which is to say too cold, and the near end is clear enough to count the stones. Somebody built the cairn on the spur and somebody else has been adding to it ever since."
+                ),
+                JGPicture(
+                    id: "peak.fold",
+                    asset: "peakSheepFold",
+                    title: "The Sheep Fold",
+                    collection: "High and Quiet",
+                    caption: "A round wall built without mortar by someone who knew exactly how many stones he had. The sheep use it in bad weather and ignore it the rest of the time, which is the whole arrangement. The walls running off over the fell are older than the hut and will outlast it."
+                ),
+                JGPicture(
+                    id: "peak.scree",
+                    asset: "peakScreePath",
+                    title: "The Scree Path",
+                    collection: "High and Quiet",
+                    caption: "It is only a path because enough people picked the same line up a slope that is otherwise loose the whole way down. Every cairn on it was built by somebody who was glad of the excuse to stop. Flowers get a hold where the stones have settled, and the marmots watch the procession from the one boulder that never moves."
+                ),
+                JGPicture(
+                    id: "peak.meadow",
+                    asset: "peakAlpineMeadow",
+                    title: "The Alpine Meadow",
+                    collection: "High and Quiet",
+                    caption: "Cut once a year, in a fortnight the weather decides rather than the calendar. Left alone until then, it does this: forty kinds of flower in a field that spends half its life under snow. The barn has stones on the roof because the wind up here has opinions about shingles."
+                ),
+                JGPicture(
+                    id: "peak.bothy",
+                    asset: "peakStoneBothy",
+                    title: "The Bothy",
+                    collection: "High and Quiet",
+                    caption: "Two rooms, a chimney and a door that shuts properly, which at this height counts as luxury. Nobody owns it and everybody looks after it, so you leave the wood you did not burn and sweep the floor on the way out. The cloud sitting in the corrie below will lift by six or not at all."
+                ),
+                JGPicture(
+                    id: "peak.ridge",
+                    asset: "peakRidgeSunrise",
+                    title: "First Light on the Ridge",
+                    collection: "High and Quiet",
+                    caption: "The sun finds the tops a good half hour before it reaches the valleys, so for a while the ridge is in the morning and everything under it is still last night. The pines up here grow sideways because sideways is the only direction left. Frost goes off the rock the moment the light touches it."
+                )
+            ]
+        ),
+        JGCollection(
+            id: "farm",
+            name: "Field and Lane",
+            blurb: "Six pieces of working country, painted in the weeks when it all happens at once.",
+            pictures: [
+                JGPicture(
+                    id: "farm.harvest",
+                    asset: "farmHarvestField",
+                    title: "The Last Field",
+                    collection: "Field and Lane",
+                    caption: "Cutting starts at the outside and works inwards, so the standing wheat gets smaller all afternoon until there is none of it left. The stubble is sharp enough to go through a boot, and the straw is baled the same evening if the forecast is being honest. Poppies survive along the margin because nobody has ever bothered to plough it."
+                ),
+                JGPicture(
+                    id: "farm.orchard",
+                    asset: "farmOldOrchard",
+                    title: "The Old Orchard",
+                    collection: "Field and Lane",
+                    caption: "Old trees, planted far enough apart that a horse could turn between them, which tells you roughly when. Half of what comes off them goes into crates and the other half stays on the grass for the hens and the wasps. The ladder has been in that fork since Tuesday and will still be there on Friday."
+                ),
+                JGPicture(
+                    id: "farm.mill",
+                    asset: "farmMillPond",
+                    title: "The Mill Pond",
+                    collection: "Field and Lane",
+                    caption: "The pond is not really a pond, it is an afternoon of water kept in hand, dammed so the wheel has something to turn on the days the stream cannot manage alone. The wheel goes round about once every four seconds and drips for ten minutes after it stops. Lilies do well in the still corner and ducks do well everywhere."
+                ),
+                JGPicture(
+                    id: "farm.lane",
+                    asset: "farmHedgerowLane",
+                    title: "The Hedgerow Lane",
+                    collection: "Field and Lane",
+                    caption: "Sunk a little lower every century by cartwheels and rain, until the banks came up to shoulder height on their own. Cow parsley takes the top of them in June and everything else fights over what is left. The grass strip down the middle survives because no wheel has ever run in the middle."
+                ),
+                JGPicture(
+                    id: "farm.barn",
+                    asset: "farmBarnDoor",
+                    title: "The Barn Door",
+                    collection: "Field and Lane",
+                    caption: "Open at both ends when the weather allows, which is what the through draught was for long before anyone called it ventilation. The tools on the wall are hung by whoever used them last and are therefore in the wrong order. The cat has the beam, the dog has the floor, and that was settled years ago."
+                ),
+                JGPicture(
+                    id: "farm.lavender",
+                    asset: "farmLavenderRows",
+                    title: "Lavender Rows",
+                    collection: "Field and Lane",
+                    caption: "Planted in rows wide enough for a machine that comes twice a year and is resented the rest of the time. In the fortnight before cutting the whole field hums loudly enough to hear from the gate. The stone holds the afternoon heat until well after dark, which is the point of building in it."
+                )
+            ]
+        ),
+        JGCollection(
+            id: "snow",
+            name: "Deep Winter",
+            blurb: "Six villages in the fortnight when snow stops being news and becomes the arrangement.",
+            pictures: [
+                JGPicture(
+                    id: "snow.lane",
+                    asset: "snowVillageLane",
+                    title: "The Village Lane",
+                    collection: "Deep Winter",
+                    caption: "The lane is cleared by whoever is up first, on a rota nobody has ever written down. Snow lying that deep on a roof is a good sign rather than a bad one: it means the heat is staying inside where it was put. The sledge by the door is transport at least half the time."
+                ),
+                JGPicture(
+                    id: "snow.bridge",
+                    asset: "snowCoveredBridge",
+                    title: "The Covered Bridge",
+                    collection: "Deep Winter",
+                    caption: "Roofed because a deck lasts eight times as long out of the weather, and for no more romantic reason than that. The river below is frozen at the edges and running black down the middle, which is exactly as far as it should be trusted. One set of footprints going in, none yet coming out."
+                ),
+                JGPicture(
+                    id: "snow.cabin",
+                    asset: "snowPineCabin",
+                    title: "The Pine Cabin",
+                    collection: "Deep Winter",
+                    caption: "Built low and squat so the drifts go over it rather than through it, with the woodpile stacked where it can be reached without putting boots on. Snow sits on a pine branch until it does not, and then the whole load comes off at once. The lantern is lit early because up here the afternoon gives up around three."
+                ),
+                JGPicture(
+                    id: "snow.canal",
+                    asset: "snowFrozenCanal",
+                    title: "The Frozen Canal",
+                    collection: "Deep Winter",
+                    caption: "Once it is thick enough the canal stops being a barrier and becomes the shortest way to everywhere. Skate lines run where the boats went in summer, and all the bridges are suddenly in the wrong place. The low sun never clears the roofs after two, so the ice keeps whatever it was given in the morning."
+                ),
+                JGPicture(
+                    id: "snow.market",
+                    asset: "snowMarketSquare",
+                    title: "The Winter Market",
+                    collection: "Deep Winter",
+                    caption: "Stalls that go up in one afternoon and come down in another, and are treated as permanent for the six weeks in between. Snow is swept off the canvas twice a day and off the cobbles about once. Everything is lit from a foot away, which is why the square looks warm and is not."
+                ),
+                JGPicture(
+                    id: "snow.aurora",
+                    asset: "snowNightLights",
+                    title: "Lights Over the Valley",
+                    collection: "Deep Winter",
+                    caption: "It happens on the clearest nights, which are also the coldest, so it is never free. The green comes and goes on a schedule of its own and does it in complete silence, which surprises people who expected otherwise. Down in the valley the windows stay lit and mostly nobody looks up."
                 )
             ]
         )
@@ -178,7 +382,7 @@ enum JGGalleryCatalog {
         collections.first(where: { $0.pictures.contains(where: { $0.id == pictureID }) })
     }
 
-    /// Total number of (picture, tier) pairs — 12 pictures across 5 cuts.
+    /// Total number of (picture, tier) pairs: every picture at every cut.
     static var configurationCount: Int { pictures.count * JGTiers.all.count }
 }
 

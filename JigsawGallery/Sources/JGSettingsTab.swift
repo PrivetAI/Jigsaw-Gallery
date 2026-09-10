@@ -115,7 +115,7 @@ struct JGSettingsTab: View {
             Text("About")
                 .font(JGFont.title(15))
                 .foregroundColor(JGPalette.ink)
-            Text("Twelve painted pictures across three collections, each cut five ways, for sixty boards in all. Progress, times and the pieces you have placed are kept on this device only.")
+            Text("\(jgSpelledNumberCapitalised(JGGalleryCatalog.pictures.count)) painted pictures across \(jgSpelledNumber(JGGalleryCatalog.collections.count)) collections, each cut \(jgSpelledNumber(JGTiers.all.count)) ways, for \(JGGalleryCatalog.configurationCount) boards in all. Progress, times and the pieces you have placed are kept on this device only.")
                 .font(JGFont.body(12))
                 .foregroundColor(JGPalette.inkSoft)
                 .lineSpacing(3)

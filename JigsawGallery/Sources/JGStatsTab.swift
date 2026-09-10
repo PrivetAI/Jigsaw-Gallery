@@ -146,7 +146,7 @@ struct JGStatsTab: View {
                     JGProgressRail(value: longest > 0 ? entry.1 / longest : 0,
                                    tone: JGPalette.teal, height: 6)
                     Text(entry.1 > 0
-                         ? "\(entry.2) · \(entry.3) of 12 pictures done at this cut"
+                         ? "\(entry.2) · \(entry.3) of \(JGGalleryCatalog.pictures.count) pictures done at this cut"
                          : "Not finished at this cut yet")
                         .font(JGFont.body(10.5))
                         .foregroundColor(JGPalette.inkFaint)
@@ -234,12 +234,13 @@ struct JGStatsTab: View {
 struct JGColumnChart: View {
     let bars: [(String, Double)]
 
+    /// One colour per collection, in catalog order. Long enough that no two collections
+    /// share a dot at the sizes the catalog actually reaches; it wraps if it ever has to.
+    private static let tones: [Color] = [JGPalette.teal, JGPalette.amber, JGPalette.rose,
+                                         JGPalette.sage, JGPalette.clay, JGPalette.slate]
+
     static func tone(_ index: Int) -> Color {
-        switch index % 3 {
-        case 0: return JGPalette.teal
-        case 1: return JGPalette.amber
-        default: return JGPalette.rose
-        }
+        tones[((index % tones.count) + tones.count) % tones.count]
     }
 
     var body: some View {

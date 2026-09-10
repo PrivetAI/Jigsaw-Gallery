@@ -60,9 +60,9 @@ struct JGShelfTab: View {
     private var shelf: some View {
         VStack(spacing: 0) {
             JGScreenHeader(title: "Jigsaw Gallery",
-                           subtitle: "12 pictures · 5 cuts each · \(store.finishedConfigurationCount) of \(JGGalleryCatalog.configurationCount) done")
+                           subtitle: "\(JGGalleryCatalog.pictures.count) pictures · \(JGTiers.all.count) cuts each · \(store.finishedConfigurationCount) of \(JGGalleryCatalog.configurationCount) done")
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 18) {
+                LazyVStack(spacing: 18) {
                     if let saved = store.resumable { resumeCard(saved) }
                     dailyCard
                     ForEach(JGGalleryCatalog.collections) { collection in
