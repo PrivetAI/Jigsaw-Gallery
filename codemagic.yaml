@@ -1,0 +1,35 @@
+workflows:
+  ios-native-quick-start:
+    name: iOS Native
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: 'Jigsaw Gallery'
+    environment:
+      # Подпись берётся из хранилища Codemagic (Settings → Code signing
+      # identities): distribution-сертификат аккаунта лежит там вместе с
+      # приватным ключом, provisioning profile выпущен под него в портале и
+      # подтянут в хранилище. Один сертификат обслуживает все сборки.
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.remanetevrimej.jigsawgallery
+      vars:
+        BUNDLE_ID: "com.remanetevrimej.jigsawgallery"
+        XCODE_WORKSPACE: "Jigsaw Gallery.xcodeproj"
+        XCODE_SCHEME: "Jigsaw Gallery"
+      xcode: latest
+    scripts:
+      - name: Set up provisioning profiles settings on Xcode project
+        script: xcode-project use-profiles
+      - name: Build ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
